@@ -7,6 +7,7 @@
 :set softtabstop=4
 :set mouse=a
 :set nu
+:set colorcolumn=80
 
 call plug#begin()
 
@@ -24,15 +25,13 @@ Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
 Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple cursors
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'https://github.com/xiyaowong/nvim-transparent' " vim terminal transparent
 
 set encoding=UTF-8
 
 call plug#end()
 
-nnoremap <C-f> :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-l> :call CocActionAsync('jumpDefinition')<CR>
 
 
 nmap <F8> :TagbarToggle<CR>
@@ -45,6 +44,9 @@ nmap <F9> :w<CR>:!python3 %<CR>
 
 let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"
+let g:transparent_enabled = v:true
+
+
 
 " --- Just Some Notes ---
 " :PlugClean :PlugInstall :UpdateRemotePlugins
